@@ -1,5 +1,7 @@
 ﻿using FlowMindsApi.Models;
+
 using Microsoft.AspNetCore.Mvc;
+
 using MongoDB.Driver;
 
 namespace FlowMindsApi.Controllers;
@@ -16,7 +18,7 @@ public class CategoryController(IMongoClient client) : ControllerBase
         await categories.InsertOneAsync(category);
         return Ok();
     }
-    
+
     [HttpGet]
     public async Task<IActionResult> Get()
     {
