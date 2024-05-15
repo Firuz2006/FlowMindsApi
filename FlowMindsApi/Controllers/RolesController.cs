@@ -21,7 +21,8 @@ public class RolesController(IRoleRepository repository) : ControllerBase
     }
 
     [EnableQuery]
-    [HttpGet]
+    [HttpGet("GetById")]
+
     public IQueryable<Role> GetById([FromODataUri] string key)
     {
         return _repository.GetById(key);

@@ -21,7 +21,8 @@ public class DepartmentsController(IDepartmentRepository repository) : Controlle
     }
 
     [EnableQuery]
-    [HttpGet]
+    [HttpGet("GetById")]
+
     public IQueryable<Department> GetById([FromODataUri] string key)
     {
         return _repository.GetById(key);

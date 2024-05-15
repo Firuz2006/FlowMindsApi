@@ -21,7 +21,8 @@ public class StackHoldersController(IStackHolderRepository repository) : Control
     }
 
     [EnableQuery]
-    [HttpGet]
+    [HttpGet("GetById")]
+
     public IQueryable<StackHolder> GetById([FromODataUri] string key)
     {
         return _repository.GetById(key);

@@ -21,7 +21,8 @@ public class FlowStepsController(IFlowStepRepository repository) : ControllerBas
     }
 
     [EnableQuery]
-    [HttpGet]
+    [HttpGet("GetById")]
+
     public IQueryable<FlowStep> GetById([FromODataUri] string key)
     {
         return _repository.GetById(key);

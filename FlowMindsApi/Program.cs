@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.OData;
 using Microsoft.OData.ModelBuilder;
 
 using MongoDB.Driver;
+using OData.Swagger.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -46,6 +47,7 @@ builder.Services.AddScoped<IMongoClient>(_ =>
     var connectionString = "mongodb://localhost:27017";
     return new MongoClient(connectionString);
 });
+builder.Services.AddOdataSwaggerSupport();
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IDocumentRepository, DocumentRepository>();

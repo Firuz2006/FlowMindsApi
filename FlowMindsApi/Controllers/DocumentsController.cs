@@ -21,7 +21,8 @@ public class DocumentsController(IDocumentRepository repository) : ControllerBas
     }
 
     [EnableQuery]
-    [HttpGet]
+    [HttpGet("GetById")]
+
     public IQueryable<Document> GetById([FromODataUri] string key)
     {
         return _repository.GetById(key);

@@ -21,7 +21,8 @@ public class FieldsController(IFieldRepository repository) : ControllerBase
     }
 
     [EnableQuery]
-    [HttpGet]
+    [HttpGet("GetById")]
+
     public IQueryable<Field> GetById([FromODataUri] string key)
     {
         return _repository.GetById(key);

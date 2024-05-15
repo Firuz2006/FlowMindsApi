@@ -21,7 +21,8 @@ public class TemplatesController(ITemplateRepository repository) : ControllerBas
     }
 
     [EnableQuery]
-    [HttpGet]
+    [HttpGet("GetById")]
+
     public IQueryable<Template> GetById([FromODataUri] string key)
     {
         return _repository.GetById(key);

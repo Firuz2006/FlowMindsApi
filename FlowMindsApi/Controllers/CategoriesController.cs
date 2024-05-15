@@ -23,7 +23,7 @@ public class CategoriesController(ICategoryRepository repository) : ControllerBa
     }
 
     [EnableQuery]
-    [HttpGet]
+    [HttpGet("GetById")]
     public IQueryable<Category> GetById([FromODataUri] string key)
     {
         return _repository.GetById(key);
